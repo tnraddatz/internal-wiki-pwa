@@ -1,5 +1,6 @@
 To run the app in production mode 
 
-npm run build
+serve -s build
 
-npx server build
+serve -s build -l 4000
+
