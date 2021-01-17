@@ -13,15 +13,15 @@ const awsConfig = {
     API: {
         endpoints: [
             {
-                name: 'WildRydesAPI',
-                endpoint: '', // example: 'https://u8swuvl00f.execute-api.us-east-2.amazonaws.com/prod'
-                region: '' // example: 'us-east-2'
+                name: 'DevNewsApi',
+                endpoint: 'https://zaobhmv7xg.execute-api.us-east-1.amazonaws.com/prod',
+                region: 'us-east-1'
             }
         ]
     },
     Storage: {
-        bucket: '', //example: 'wildrydesbackend-profilepicturesbucket-1wgssc97ekdph'
-        region: '' // example: 'us-east-2'
+        bucket: 'dev-news-backend-profilepicturesbucket-3uyexx6sshey',
+        region: 'us-east-1'
     }
 }
 
