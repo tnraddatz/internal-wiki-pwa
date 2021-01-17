@@ -9,7 +9,7 @@ const Home = () => {
     const [websiteTitle, setWebsiteTitle] = useState('')
     const onSubmitForm = (e) => {
         e.preventDefault();
-        callNewsAPI('post', { PostUrl: websiteUrl, Title: websiteTitle }, '/postArticle', true).then((resp) => setPost(resp))
+        callNewsAPI('post', {}, '/listArticles').then((resp) => setPost(resp))
     }
 
     return (
