@@ -8,7 +8,7 @@ import {
     BrowserRouter
 } from 'react-router-dom'
 import { Auth } from 'aws-amplify'
-import { Home, Profile } from './pages';
+import { Home, Profile, PostArticle } from './pages';
 import { SignIn, SignUp } from './auth';
 
 class PrivateRoute extends React.Component {
@@ -68,6 +68,7 @@ const Routes = () => (
             <Route path="/home" component={Home} />
             <Route path="/register" component={SignUp} />
             <Route path="/signin" component={SignIn} />
+            <Route path="/post-article" component={PostArticle} />
             <PrivateRoute path="/profile" component={Profile} />
         </Switch>
     </BrowserRouter>

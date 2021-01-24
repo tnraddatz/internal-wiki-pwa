@@ -2,6 +2,7 @@ import React from 'react';
 import { Auth } from 'aws-amplify';
 import { withRouter } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
+import "./style.css";
 
 /**
  * Sign-in Page
@@ -58,27 +59,29 @@ class SignIn extends React.Component {
         const isValidPassword = this.state.password.length > 1;
 
         return (
-            <div className="app">
-                {/* <section className="form-wrap">
-                    <h1>Sign in</h1>
-                    <form id="registrationForm" onSubmit={(e) => this.onSubmitForm(e)}>
-                        <input className={isValidEmail ? 'valid' : 'invalid'} type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.onEmailChanged(e)} />
-                        <input className={isValidPassword ? 'valid' : 'invalid'} type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.onPasswordChanged(e)} />
-                        <input disabled={!(isValidEmail && isValidPassword)} type="submit" value="Sign In" />
-                    </form>
-                </section> */}
+            <div className="Standard">
                 <Form onSubmit={(e) => this.onSubmitForm(e)}>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" value={this.state.email} onChange={(e) => this.onEmailChanged(e)} required />
+                    <Form.Group size="lg" controlId="email">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            autoFocus
+                            type="email"
+                            value={this.state.email}
+                            onChange={(e) => this.onEmailChanged(e)}
+                            required
+                        />
                     </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group size="lg" controlId="password">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.onPasswordChanged(e)} required />
+                        <Form.Control
+                            type="password"
+                            value={this.state.password}
+                            onChange={(e) => this.onPasswordChanged(e)}
+                            required
+                        />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Sign In
+                    <Button block size="lg" type="submit">
+                        Login
                     </Button>
                 </Form>
             </div>

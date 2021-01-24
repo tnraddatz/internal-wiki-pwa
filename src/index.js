@@ -4,11 +4,11 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import Amplify from 'aws-amplify';
 import awsConfig from './amplify-config';
-import SiteNav from './components/sitenav.js';
+import SiteNav from './components/AppBar/sitenav.js';
 import Routes from './Router.js'
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Container } from 'react-bootstrap';
 Amplify.configure(awsConfig);
 
 class App extends React.Component {
@@ -17,7 +17,9 @@ class App extends React.Component {
       <div>
         <SiteNav />
         <React.StrictMode>
-          <Routes />
+          <Container fluid="xl">
+            <Routes />
+          </Container>
         </React.StrictMode>
       </div>
     );

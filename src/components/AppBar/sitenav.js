@@ -9,7 +9,7 @@ class SiteNav extends React.Component {
 
     render() {
         return (
-            <Navbar bg="light" expand="lg" class="navbar navbar-default navbar-static-top">
+            <Navbar bg="light" expand="lg" className="navbar navbar-default navbar-static-top">
                 <Navbar.Brand href="/">News Wiki</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -18,7 +18,7 @@ class SiteNav extends React.Component {
                         <Nav.Link href="/profile">Profile</Nav.Link>
                         <Nav.Link href="/register">SignUp</Nav.Link>
                         <Nav.Link href="/signin">SignIn</Nav.Link>
-                        <Nav.Link href="/" onClick={(e) => Auth.signOut()} >SignOut</Nav.Link>
+                        <Nav.Link href="/" onClick={(e) => Auth.signOut()}> SignOut </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

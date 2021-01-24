@@ -91,34 +91,24 @@ class SignUp extends React.Component {
         const isValidConfirmation = isValidPassword && this.state.password === this.state.confirm;
 
         return (
-            <div className="app">
-                {/* <section className="form-wrap">
-                    <h1>Register</h1>
-                    <form id="registrationForm" onSubmit={(e) => this.onSubmitForm(e)}>
-                        <input className={isValidEmail ? 'valid' : 'invalid'} type="email" placeholder="Email" value={this.state.email} onChange={(e) => this.onEmailChanged(e)} />
-                        <input className={isValidPassword ? 'valid' : 'invalid'} type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.onPasswordChanged(e)} />
-                        <input className={isValidConfirmation ? 'valid' : 'invalid'} type="password" placeholder="Confirm Password" value={this.state.confirm} onChange={(e) => this.onConfirmationChanged(e)} />
-                        <input disabled={!(isValidEmail && isValidPassword && isValidConfirmation)} type="submit" value="Submit" />
-                    </form>
-                </section> */}
-
+            <div className="Standard">
                 <Form onSubmit={(e) => this.onSubmitForm(e)}>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                    <Form.Group size="lg" controlId="email">
+                        <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" value={this.state.email} onChange={(e) => this.onEmailChanged(e)} required />
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group size="lg" controlId="password">
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={(e) => this.onPasswordChanged(e)} required />
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group size="lg" controlId="password">
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password" placeholder="Confirm Password" value={this.state.confirm} onChange={(e) => this.onConfirmationChanged(e)} required />
                     </Form.Group>
 
-                    <Button disabled={!(isValidEmail && isValidPassword && isValidConfirmation)} variant="primary" type="submit">
+                    <Button disabled={!(isValidEmail && isValidPassword && isValidConfirmation)} block size="lg" variant="primary" type="submit">
                         Sign Up
                     </Button>
                 </Form>

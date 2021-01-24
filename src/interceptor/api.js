@@ -3,7 +3,7 @@ import { Auth, API } from 'aws-amplify'
 import { createResponse } from './response'
 
 
-export const callNewsAPI = async (type, body, apiPath) => {
+export const callNewsAPI = async (body, apiPath) => {
     const apiName = 'DevNewsApi'
 
     const apiRequest = {
@@ -13,44 +13,16 @@ export const callNewsAPI = async (type, body, apiPath) => {
         }
     }
 
-    switch (type.toLowerCase()) {
-        case "get":
-            return await API.get(apiName, apiPath, apiRequest)
-                .then(response => {
-                    const responseObject = createResponse(response, true)
-                    return responseObject
-                })
-                .catch(error => {
-                    const responseObject = createResponse(error.response, false)
-                    return responseObject
-                });
-        case "post":
-            return await API.post(apiName, apiPath, apiRequest)
-                .then(response => {
-                    const responseObject = createResponse(response, true)
-                    return responseObject
-                })
-                .catch(error => {
-                    const responseObject = createResponse(error.response, false)
-                    return responseObject
-                });
-        case "del":
-            return await API.del(apiName, apiPath, apiRequest)
-                .then(response => {
-                    const responseObject = createResponse(response, true)
-                    return responseObject
-                })
-                .catch(error => {
-                    const responseObject = createResponse(error.response, false)
-                    return responseObject
-                });
-        default:
-            const responseObject = createResponse({
-                status: 500,
-                statusText: "Invalid Call to Service",
-                data: {},
-                isSuccess: false
-            }, false)
+    //POST is the only type of request we make to api-gateway b/c of SigV4
+    return await API.post(apiName, apiPath, apiRequest)
+        .then(response => {
+            const responseObject = createResponse(response, true)
             return responseObject
-    }
+        })
+        .catch(error => {
+            console.log(error)
+            const responseObject = createResponse(error.response, false)
+            return responseObject
+        });
 };
+

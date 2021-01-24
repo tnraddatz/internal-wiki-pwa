@@ -1,9 +1,9 @@
 
 export const createResponse = (respObject, isSuccess) => {
     const response = {
-        status: isSuccess ? 200 : respObject.status,
-        statusText: isSuccess ? 'success' : respObject.statusText,
-        data: isSuccess ? respObject : respObject.data,
+        status: isSuccess ? 200 : respObject.status ? respObject.status : 500,
+        statusText: isSuccess ? 'success' : respObject.statusText ? respObject.statusText : 'unknown user interface error',
+        data: isSuccess ? respObject : respObject.data ? respObject.data : {},
         isSuccess: isSuccess,
         isError: !isSuccess,
         isLoading: false

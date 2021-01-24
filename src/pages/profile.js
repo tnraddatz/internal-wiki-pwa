@@ -18,7 +18,7 @@ class Profile extends React.Component {
         Auth.currentAuthenticatedUser().then(user => {
             console.log('Cognito User', user);
             this.setState({ user, image_key: 'profile-' + user.attributes.sub + '.jpg' });
-        });;
+        });
     }
 
     async onImageLoad(url) {
