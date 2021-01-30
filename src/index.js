@@ -16,6 +16,7 @@ class App extends React.Component {
     return (
       <div>
         <SiteNav />
+        <br />
         <React.StrictMode>
           <Container fluid="xl">
             <Routes />

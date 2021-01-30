@@ -20,7 +20,6 @@ export const callNewsAPI = async (body, apiPath) => {
             return responseObject
         })
         .catch(error => {
-            console.log(error)
             const responseObject = createResponse(error.response, false)
             return responseObject
         });
