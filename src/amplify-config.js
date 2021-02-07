@@ -13,9 +13,8 @@ const awsConfig = {
     API: {
         endpoints: [
             {
-                name: 'DevNewsApi',
-                endpoint: 'https://zaobhmv7xg.execute-api.us-east-1.amazonaws.com/prod',
-                region: 'us-east-1'
+                name: 'prod-article-app',
+                endpoint: 'https://r6vkydu0c2.execute-api.us-east-1.amazonaws.com/prod'
             }
         ]
     },

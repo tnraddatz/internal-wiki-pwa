@@ -6,8 +6,7 @@ export const model = {
     POST_ARTICLE: {
         endpoint: '/postArticle',
         body: {
-            PostUrl: null,
-            Title: null
+            website_url: null
         }
     }
 }

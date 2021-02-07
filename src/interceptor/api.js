@@ -4,7 +4,7 @@ import { createResponse } from './response'
 
 
 export const callNewsAPI = async (body, apiPath) => {
-    const apiName = 'DevNewsApi'
+    const apiName = 'prod-article-app'
 
     const apiRequest = {
         body: body,
