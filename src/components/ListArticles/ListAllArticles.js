@@ -20,10 +20,11 @@ const MasonryArray = (data) => {
             breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
-            {data.data.Items.map((item) => {
+            {data.map((item) => {
                 return <div key={item.PostUrl}>
                     <div>URL: {item.PostUrl} </div>
                     <div>title: {item.Title}</div>
+                    <div>Description: {item.Description}</div>
                 </div>
             })}
         </Masonry>
